@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8">
+<style>body{background:#0f1722;color:#fff;font-family:sans-serif;text-align:center;padding-top:40%;font-size:18px;line-height:2}</style>
+</head>
+<body>正在加载…</body>
+<script>
+try {
+  localStorage.setItem('t', '1');
+  var r = localStorage.getItem('t');
+  document.body.innerHTML = '✅ 文件加载 OK<br>✅ 本地存储 OK<br>✅ 页面脚本 OK';
+  if (window.Android && window.Android.log) window.Android.log('hello页脚本运行 OK');
+  if (window.Android && window.Android.setSplash) {
+    window.Android.setSplash('测试页全部正常', false);
+  }
+} catch (e) {
+  document.body.innerHTML = '❌ 出错: ' + e.message;
+}
+</script>
+</html>
